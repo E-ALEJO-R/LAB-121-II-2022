@@ -8,7 +8,8 @@ public class Main {
         // a)
         Supermarket supermarket1 = new Supermarket(865, "Ekko Fidalga", "Av. Cañoto 202");
         Supermarket supermarket2 = new Supermarket("Makro Parque","Av. Cuarto Anillo y 3");
-        // b)
+
+        System.out.println("\nb) Mostrar los dos supermercados.");
         supermarket1.show();
         supermarket2.show();
 
