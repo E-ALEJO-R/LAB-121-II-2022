@@ -17,9 +17,13 @@ public class Supermarket {
     }
 
     public void show(){
-        System.out.println("ID:            " + ci);
+        System.out.println("\nID:            " + ci);
         System.out.println("Super mercado: " + name);
         System.out.println("Dirección:     " + address);
+        System.out.println("--------------------productos--------------------");
+        for (int i = 0; i < nbrProducts; i++) {
+            System.out.println("producto: " + products[i][0] + "  stock: " + products[i][1] + "  precio: " + products[i][2]);
+        }
     }
 
     public Supermarket(double ci, String name, String address) {
@@ -28,8 +32,8 @@ public class Supermarket {
         this.address = address;
         this.nbrProducts = 3;
         this.products[0][0] = "café"; this.products[0][1] = "8"; this.products[0][2] = "11";
-        this.products[0][0] = "coca cola"; this.products[0][1] = "45"; this.products[0][2] = "12";
-        this.products[0][0] = "fanta"; this.products[0][1] = "14"; this.products[0][2] = "9";
+        this.products[1][0] = "coca cola"; this.products[1][1] = "45"; this.products[1][2] = "12";
+        this.products[2][0] = "fanta"; this.products[2][1] = "14"; this.products[2][2] = "9";
     }
 
     public double getCi() {
@@ -71,4 +75,6 @@ public class Supermarket {
     public void setProducts(String[][] products) {
         this.products = products;
     }
+
+
 }
