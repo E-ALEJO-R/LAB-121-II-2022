@@ -11,5 +11,8 @@ public class Main {
         // b)
         supermarket1.show();
         supermarket2.show();
+
+        System.out.println("\nc) Mostrar el supermercado con más stock disponible del producto de nombre X.");
+        System.out.println("El supermercado con más stock del producto café es: " + supermarket1.moreStock(supermarket2, "café"));
     }
 }
