@@ -11,17 +11,22 @@ public class Main {
         };
         LibroFisico libroFisico = new LibroFisico(
                 "Osvaldo Cairo", "tipo", "Estructura de datos",
-                100, 4, capLibFis, 50
+                100, 5, capLibFis, 50
         );
+        System.out.println("\n+++++++++++++++ LIBRO FÍSICO +++++++++++++++++");
+        libroFisico.mostrar();
+
 
         String[][] capsLibDig = {
-                {},
-                {},
-                {}
+                {"Sistemas numéricos", "5", "9"},
+                {"Métodos de conteo", "7", "66"},
+                {"Conjuntos", "52", "100"}
         };
         LibroDigital libroDigital = new LibroDigital(
                 "José Jimenez Murillo", "tipo", "Matemáticas para la computación",
                 200, 3, capsLibDig, ".pdf"
         );
+        System.out.println("\n+++++++++++++++ LIBRO DIGITAL +++++++++++++++++");
+        libroDigital.mostrar();
     }
 }
