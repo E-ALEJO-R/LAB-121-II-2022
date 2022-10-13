@@ -13,7 +13,8 @@ public class Main {
                 "Osvaldo Cairo", "tipo", "Estructura de datos",
                 100, 5, capLibFis, 50
         );
-        System.out.println("\n+++++++++++++++ LIBRO FÍSICO +++++++++++++++++");
+        System.out.println("\na)");
+        System.out.println("+++++++++++++++ LIBRO FÍSICO +++++++++++++++++");
         libroFisico.mostrar();
 
 
