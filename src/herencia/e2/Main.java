@@ -6,7 +6,7 @@ public class Main {
         mLaboratorios[0] = new MLaboratorio(
                 "LAB121", "Laboratorio de INF-121", "A"
                 , "Presencial", "Informática", "Presencial",
-                "Alan Brito", 90, 123,
+                "Alan Brit", 90, 123,
                 145, 50, "inf-111"
         );
         mLaboratorios[1] = new MLaboratorio(
@@ -22,7 +22,7 @@ public class Main {
         mCatedras[0] = new MCatedra(
                 "LAB121", "Laboratorio de INF-121", "A"
                 , "Troncal", "Informática", "Presencial",
-                "Alan Brito", 90, 123, 145
+                "Alan Brit", 90, 123, 5
         );
         mCatedras[1] = new MCatedra(
                 "LAB121", "Laboratorio de INF-121", "A"
