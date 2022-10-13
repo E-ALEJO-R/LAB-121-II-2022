@@ -37,5 +37,9 @@ public class Main {
         ListaLibro listaLibro = new ListaLibro(2, libs);
         System.out.println("\n+++++++++++++++ LISTA LIBROS +++++++++++++++++");
         listaLibro.mostrar();
+
+        System.out.println("\nb)");
+        libroFisico.capitulosEmpiecenConA(libroDigital);
+
     }
 }

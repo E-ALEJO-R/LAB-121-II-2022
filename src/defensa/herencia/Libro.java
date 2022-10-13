@@ -28,7 +28,7 @@ public class Libro extends ProduccionIntelectual {
         System.out.println("Número de capítulos: " + nroCapitulos);
         System.out.println("------------------------------------------------------");
         for (int i = 0; i < nroCapitulos; i++) {
-            if (capitulos[i][0]!= null){
+            if (capitulos[i][0] != null) {
                 System.out.println(
                         "Capítulo->" + capitulos[i][0] +
                                 "Imágenes->" + capitulos[i][1] +
@@ -37,6 +37,35 @@ public class Libro extends ProduccionIntelectual {
             }
         }
         System.out.println("------------------------------------------------------");
+    }
+
+    /**
+     * Para el inciso b) mostrar (título, nombre autor capítulos que empiecen con "A")
+     */
+    public void capitulosEmpiecenConA(Libro libro) {
+        if (contarA(this) > contarA(libro)) {
+            System.out.println("Título: " + this.titulo);
+            System.out.println("Nombre del autor: " + this.autor);
+        } else if (contarA(libro) > contarA(this)) {
+            System.out.println("Título: " + libro.titulo);
+            System.out.println("Nombre del autor: " + libro.autor);
+        } else {
+            System.out.println("Los dos libros tienen la misma cantidad de letras A");
+        }
+    }
+
+    public int contarA(Libro libro) {
+        String[][] libros = libro.capitulos;
+        int counter = 0;
+        for (int i = 0; i < libro.nroCapitulos; i++) {
+            String cap = libros[i][0];
+            for (int j = 0; j < cap.length(); j++) {
+                if (cap.charAt(j) == 'A' || cap.charAt(j) == 'a') {
+                    counter++;
+                }
+            }
+        }
+        return counter;
     }
 
     public String getTitulo() {
