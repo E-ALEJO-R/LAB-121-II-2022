@@ -29,5 +29,13 @@ public class Main {
         );
         System.out.println("\n+++++++++++++++ LIBRO DIGITAL +++++++++++++++++");
         libroDigital.mostrar();
+
+        String[][] libs = {
+                {"Estructuras fundamentales de datos", "Osvaldo Cairo", "tipo", "100"},
+                {"Matemáticas para la computación", "José Jimenez Murillo", "tipo", "200"}
+        };
+        ListaLibro listaLibro = new ListaLibro(2, libs);
+        System.out.println("\n+++++++++++++++ LISTA LIBROS +++++++++++++++++");
+        listaLibro.mostrar();
     }
 }
