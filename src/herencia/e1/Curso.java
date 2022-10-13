@@ -1,7 +1,5 @@
 package herencia.e1;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-
 public class Curso {
     protected int id;
     protected String nomDirector;
@@ -41,7 +39,16 @@ public class Curso {
     }
 
     public void agregarKEstudiantes(Curso curso, String[][] estudiantes) {
+        if (this.numEstudiantes < curso.numEstudiantes) {
+            for (int i = 0; i < estudiantes.length; i++) {
 
+            }
+            this.numEstudiantes += estudiantes.length - 1;
+        } else if (curso.numEstudiantes < this.numEstudiantes) {
+
+        } else {
+            System.out.println("los dos cursos tienen la misma cantidad de estudiantes, por lo tanto no se agregó");
+        }
     }
 
     public int getId() {
