@@ -2,19 +2,19 @@ package persistencia;
 
 public class TiendaBebida extends Tienda {
     private int nroBebidas;
-    private Bebida[] bebidas = new Bebida[50];
+    private Bebida[] bebidas;
     private String registroSanitario;
 
-    public TiendaBebida(int nit, String nombre, String direcion, int nroBebidas, Bebida[] bebidas, String registroSanitario) {
+    public TiendaBebida(int nit, String nombre, String direcion, int nroBebidas, String registroSanitario) {
         super(nit, nombre, direcion);
         this.nroBebidas = nroBebidas;
-        this.bebidas = bebidas;
+        this.bebidas = new Bebida[this.nroBebidas];
         this.registroSanitario = registroSanitario;
     }
 
-    public TiendaBebida(int nroBebidas, Bebida[] bebidas, String registroSanitario) {
+    public TiendaBebida(int nroBebidas, String registroSanitario) {
         this.nroBebidas = nroBebidas;
-        this.bebidas = bebidas;
+        this.bebidas = new Bebida[this.nroBebidas];
         this.registroSanitario = registroSanitario;
     }
 
@@ -30,8 +30,13 @@ public class TiendaBebida extends Tienda {
         return bebidas;
     }
 
-    public void setBebidas(Bebida[] bebidas) {
-        this.bebidas = bebidas;
+    public void setBebida(Bebida bebida) {
+        for (int i = 0; i < nroBebidas; i++) {
+            if (this.bebidas[i] == null){
+                this.bebidas[i] = bebida;
+                break;
+            }
+        }
     }
 
     public String getRegistroSanitario() {

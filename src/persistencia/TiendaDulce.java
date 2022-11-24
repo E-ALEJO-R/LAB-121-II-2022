@@ -2,13 +2,13 @@ package persistencia;
 
 public class TiendaDulce extends Tienda {
     private int nroDulces;
-    private Dulce[] dulces = new Dulce[50];
+    private Dulce[] dulces;
     private String marca;
 
-    public TiendaDulce(int nit, String nombre, String direcion, int nroDulces, Dulce[] dulces, String marca) {
+    public TiendaDulce(int nit, String nombre, String direcion, int nroDulces, String marca) {
         super(nit, nombre, direcion);
         this.nroDulces = nroDulces;
-        this.dulces = dulces;
+        this.dulces = new Dulce[this.nroDulces];
         this.marca = marca;
     }
 
@@ -28,8 +28,13 @@ public class TiendaDulce extends Tienda {
         return dulces;
     }
 
-    public void setDulces(Dulce[] dulces) {
-        this.dulces = dulces;
+    public void setDulce(Dulce dulce) {
+        for (int i = 0; i < nroDulces; i++) {
+            if (this.dulces[i] == null){
+                this.dulces[i] = dulce;
+                break;
+            }
+        }
     }
 
     public String getMarca() {
