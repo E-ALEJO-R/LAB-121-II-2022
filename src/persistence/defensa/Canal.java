@@ -8,6 +8,7 @@ public class Canal implements Serializable {
 
     public Canal(String canal, int[] aprob) {
         this.aprob = aprob;
+        this.canal = canal;
     }
 
     public void mostrar() {

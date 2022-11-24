@@ -12,5 +12,11 @@ public class Main {
 
         ArchivoRanking archivo = new ArchivoRanking("ranking.txt");
         archivo.crear();
+        archivo.adicionar(atb);
+        archivo.adicionar(rtp);
+        archivo.adicionar(unitel);
+        archivo.adicionar(ctv);
+        archivo.adicionar(pat);
+        archivo.listar();
     }
 }
