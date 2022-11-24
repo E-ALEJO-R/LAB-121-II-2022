@@ -12,8 +12,13 @@ public class TiendaDulce extends Tienda {
         this.marca = marca;
     }
 
+    public void mostrar(){
+        System.out.println("lllll");
+    }
+
     public TiendaDulce() {
         super();
+        this.dulces = new Dulce[50];
     }
 
     public int getNroDulces() {

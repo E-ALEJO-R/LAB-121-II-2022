@@ -91,9 +91,11 @@ public class ArchivoTiendaDulce {
 
     public void listar() {
         try {
+            value = new TiendaDulce();
             ois = new ObjectInputStream(new FileInputStream(file));
             while (true) {
                 value = (TiendaDulce) ois.readObject();
+                value.mostrar();
             }
         } catch (EOFException e) {
             try {
@@ -110,6 +112,8 @@ public class ArchivoTiendaDulce {
             System.out.println("clase no encontrada");
         } catch (IOException e) {
             System.out.println("error de entrada y salida");
+        } catch (NullPointerException e){
+            System.out.println("valor nulo: " + e.getMessage());
         }
     }
 }

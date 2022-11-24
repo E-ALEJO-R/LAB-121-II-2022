@@ -94,6 +94,7 @@ public class ArchivoTiendaBebida {
             ois = new ObjectInputStream(new FileInputStream(file));
             while (true) {
                 value = (TiendaBebida) ois.readObject();
+                value.mostrar();
             }
         } catch (EOFException e) {
             try {
