@@ -18,5 +18,9 @@ public class Main {
         archivo.adicionar(ctv);
         archivo.adicionar(pat);
         archivo.listar();
+
+
+        // para no duplicar los canales
+        archivo.eliminar();
     }
 }

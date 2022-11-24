@@ -27,6 +27,10 @@ public class ArchivoRanking {
         }
     }
 
+    public void eliminar() {
+        this.file.delete();
+    }
+
     public void adicionar(Canal canal) {
         try {
             if (file.length() > 0) {
@@ -73,6 +77,29 @@ public class ArchivoRanking {
     }
 
     public void canalMasAprob() {
-
+        try {
+            ois = new ObjectInputStream(new FileInputStream(file));
+            while (true) {
+                canal = (Canal) ois.readObject();
+                canal.mostrar();
+            }
+        } catch (EOFException e) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                    System.out.println("fin de lectura");
+                }
+            } catch (IOException ioe) {
+                System.out.println("error de entrada y salida");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("archivo no encontrado");
+        } catch (ClassNotFoundException e) {
+            System.out.println("clase no encontrada");
+        } catch (IOException e) {
+            System.out.println("error de entrada y salida");
+        } catch (NullPointerException e) {
+            System.out.println("valor nulo: " + e.getMessage());
+        }
     }
 }
