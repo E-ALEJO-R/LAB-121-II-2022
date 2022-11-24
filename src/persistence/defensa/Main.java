@@ -19,7 +19,7 @@ public class Main {
         archivo.adicionar(pat);
         archivo.listar();
 
-
+        archivo.canalMasAprob();
         // para no duplicar los canales
         archivo.eliminar();
     }

@@ -77,17 +77,25 @@ public class ArchivoRanking {
     }
 
     public void canalMasAprob() {
+        String mayorAprop = "";
+        float prom = 0;
         try {
             ois = new ObjectInputStream(new FileInputStream(file));
+            System.out.println("\nMOSTRANDO CANALES CON APROBACIÓN MAYOR A 51%");
+            System.out.println("----------------------------------------------");
             while (true) {
                 canal = (Canal) ois.readObject();
-                canal.mostrar();
+                if (canal.mayor51() > 51){
+                    mayorAprop = canal.getCanal();
+                    System.out.println("Aprobación: " + mayorAprop + " con un promedio de " + canal.mayor51() + "%");
+                }
             }
         } catch (EOFException e) {
             try {
                 if (ois != null) {
                     ois.close();
-                    System.out.println("fin de lectura");
+                    // System.out.println("Canal con mayor aprobación: " + mayorAprop);
+                    // System.out.println("fin de lectura");
                 }
             } catch (IOException ioe) {
                 System.out.println("error de entrada y salida");

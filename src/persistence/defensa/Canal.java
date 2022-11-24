@@ -11,6 +11,14 @@ public class Canal implements Serializable {
         this.canal = canal;
     }
 
+    public float mayor51() {
+        float sum = 0;
+        for (int j : aprob) {
+            sum = sum + j;
+        }
+        return  (sum * 100) / 500;
+    }
+
     public void mostrar() {
         System.out.println("\ncanal: " + canal);
         System.out.println("----- aprobaciones -----");
