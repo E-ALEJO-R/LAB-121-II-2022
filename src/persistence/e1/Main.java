@@ -1,10 +1,8 @@
 package persistence.e1;
 
-import java.io.IOException;
-
 public class Main {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) {
         ArchivoAvion archivoAvion = new ArchivoAvion("datos.txt");
         archivoAvion.crear();
         Avion a1 = new Avion("76226", "La Paz", "Oruro", "6:00", "Alex");
