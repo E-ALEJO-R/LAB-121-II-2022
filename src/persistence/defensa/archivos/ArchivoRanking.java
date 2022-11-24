@@ -85,7 +85,7 @@ public class ArchivoRanking {
             System.out.println("----------------------------------------------");
             while (true) {
                 canal = (Canal) ois.readObject();
-                if (canal.mayor51() > 51){
+                if (canal.mayor51() > 51) {
                     mayorAprop = canal.getCanal();
                     System.out.println("Aprobación: " + mayorAprop + " con un promedio de " + canal.mayor51() + "%");
                 }
@@ -96,6 +96,36 @@ public class ArchivoRanking {
                     ois.close();
                     // System.out.println("Canal con mayor aprobación: " + mayorAprop);
                     // System.out.println("fin de lectura");
+                }
+            } catch (IOException ioe) {
+                System.out.println("error de entrada y salida");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("archivo no encontrado");
+        } catch (ClassNotFoundException e) {
+            System.out.println("clase no encontrada");
+        } catch (IOException e) {
+            System.out.println("error de entrada y salida");
+        } catch (NullPointerException e) {
+            System.out.println("valor nulo: " + e.getMessage());
+        }
+    }
+
+    public void canalMasVistoDptoX(int dpto) {
+        int d[] = new int[5];
+        try {
+            ois = new ObjectInputStream(new FileInputStream(file));
+            System.out.println("\nMOSTRANDO CANAL MÁS VISTO EN EL DPTO " + dpto);
+            System.out.println("----------------------------------------------");
+            while (true) {
+                canal = (Canal) ois.readObject();
+                if (canal.mayor51() > 51) {
+                }
+            }
+        } catch (EOFException e) {
+            try {
+                if (ois != null) {
+                    ois.close();
                 }
             } catch (IOException ioe) {
                 System.out.println("error de entrada y salida");
