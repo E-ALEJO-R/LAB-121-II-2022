@@ -1,6 +1,8 @@
 package persistencia;
 
-public class Dulce {
+import java.io.Serializable;
+
+public class Dulce implements Serializable {
     private String sabor;
     private int precio;
     private double peso;
@@ -15,9 +17,9 @@ public class Dulce {
     }
 
     public void mostrar() {
-        System.out.println("sabor: " + sabor);
-        System.out.println("precio: " + precio);
-        System.out.println("peso: " + peso);
+        System.out.print("sabor: " + sabor);
+        System.out.print(", precio: " + precio);
+        System.out.println(", peso: " + peso);
     }
 
     public String getSabor() {

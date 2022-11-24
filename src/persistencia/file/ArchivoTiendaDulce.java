@@ -40,7 +40,7 @@ public class ArchivoTiendaDulce {
             } else {
                 oos = new ObjectOutputStream(new FileOutputStream(file));
             }
-            oos.writeObject(value);
+            oos.writeObject(element);
             oos.flush();
             oos.close();
             System.out.println("guardado correctamente");
@@ -91,7 +91,7 @@ public class ArchivoTiendaDulce {
 
     public void listar() {
         try {
-            value = new TiendaDulce();
+            // value = new TiendaDulce();
             ois = new ObjectInputStream(new FileInputStream(file));
             while (true) {
                 value = (TiendaDulce) ois.readObject();

@@ -1,6 +1,8 @@
 package persistencia;
 
-public class Bebida {
+import java.io.Serializable;
+
+public class Bebida implements Serializable {
     private String marca;
     private String nombre;
     private int precio;
@@ -17,10 +19,10 @@ public class Bebida {
     }
 
     public void mostrar() {
-        System.out.println("marca: " + marca);
-        System.out.println("nombre: " + nombre);
-        System.out.println("precio: " + precio);
-        System.out.println("litros: " + litros);
+        System.out.print("marca: " + marca);
+        System.out.print(", nombre: " + nombre);
+        System.out.print(", precio: " + precio);
+        System.out.println(", litros: " + litros);
     }
 
     public String getMarca() {

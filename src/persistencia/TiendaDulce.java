@@ -1,6 +1,8 @@
 package persistencia;
 
-public class TiendaDulce extends Tienda {
+import java.io.Serializable;
+
+public class TiendaDulce extends Tienda implements Serializable {
     private int nroDulces;
     private Dulce[] dulces;
     private String marca;
@@ -13,7 +15,16 @@ public class TiendaDulce extends Tienda {
     }
 
     public void mostrar(){
-        System.out.println("lllll");
+        System.out.println("\n----------------Tienda dulce----------------");
+        System.out.println("marca: " + marca);
+        System.out.println("cantidad de dulces: " + nroDulces);
+        System.out.println("----------------------------------------------");
+        for (int i = 0; i < nroDulces; i++) {
+            if (dulces[i] != null){
+                dulces[i].mostrar();
+            }
+        }
+        System.out.println("----------------------------------------------");
     }
 
     public TiendaDulce() {

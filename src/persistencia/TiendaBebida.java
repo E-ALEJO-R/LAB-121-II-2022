@@ -1,6 +1,8 @@
 package persistencia;
 
-public class TiendaBebida extends Tienda {
+import java.io.Serializable;
+
+public class TiendaBebida extends Tienda implements Serializable {
     private int nroBebidas;
     private Bebida[] bebidas;
     private String registroSanitario;
@@ -18,6 +20,19 @@ public class TiendaBebida extends Tienda {
         this.registroSanitario = registroSanitario;
     }
 
+    public void mostrar() {
+        System.out.println("---------------Tienda bebida---------------");
+        System.out.println("registro sanitario: " + registroSanitario);
+        System.out.println("cantidad de bebidas: " + nroBebidas);
+        System.out.println("-------------------------------------------");
+        for (int i = 0; i < nroBebidas; i++) {
+            if (bebidas[i] != null) {
+                bebidas[i].mostrar();
+            }
+        }
+        System.out.println("-------------------------------------------");
+    }
+
     public int getNroBebidas() {
         return nroBebidas;
     }
@@ -32,7 +47,7 @@ public class TiendaBebida extends Tienda {
 
     public void setBebida(Bebida bebida) {
         for (int i = 0; i < nroBebidas; i++) {
-            if (this.bebidas[i] == null){
+            if (this.bebidas[i] == null) {
                 this.bebidas[i] = bebida;
                 break;
             }

@@ -1,6 +1,8 @@
 package persistencia;
 
-public class Tienda {
+import java.io.Serializable;
+
+public class Tienda implements Serializable {
     private int nit;
     private String nombre;
     private String direcion;
