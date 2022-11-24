@@ -77,8 +77,6 @@ public class ArchivoRanking {
     }
 
     public void canalMasAprob() {
-        String mayorAprop = "";
-        float prom = 0;
         try {
             ois = new ObjectInputStream(new FileInputStream(file));
             System.out.println("\nMOSTRANDO CANALES CON APROBACIÓN MAYOR A 51%");
@@ -86,8 +84,7 @@ public class ArchivoRanking {
             while (true) {
                 canal = (Canal) ois.readObject();
                 if (canal.mayor51() > 51) {
-                    mayorAprop = canal.getCanal();
-                    System.out.println("Aprobación: " + mayorAprop + " con un promedio de " + canal.mayor51() + "%");
+                    System.out.println("Aprobación: " + canal.getCanal() + " con " + canal.mayor51() + "%");
                 }
             }
         } catch (EOFException e) {
