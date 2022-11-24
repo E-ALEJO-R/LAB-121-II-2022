@@ -64,6 +64,7 @@ public class Avion implements Serializable {
     }
 
     public void mostrar() {
+        System.out.println("\n\n--------------------------------------");
         System.out.println("matrícula: " + matricula);
         System.out.println("origen: " + origen);
         System.out.println("destino: " + destino);

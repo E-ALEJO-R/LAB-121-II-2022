@@ -45,7 +45,7 @@ public class ArchivoAvion {
         }
     }
 
-    public void eliminar(Avion avion) {
+    public void eliminar(String matricula) {
         File temp = new File("tmp.txt");
         try {
             if (!temp.createNewFile()) System.out.println("error al crear el archivo aux");
@@ -57,7 +57,7 @@ public class ArchivoAvion {
             oos = new ObjectOutputStream(new FileOutputStream(temp));
             while (true) {
                 this.avion = (Avion) ois.readObject();
-                if (!this.avion.equals(avion)) {
+                if (!this.avion.getMatricula().equals(matricula)) {
                     oos.writeObject(this.avion);
                 }
             }
